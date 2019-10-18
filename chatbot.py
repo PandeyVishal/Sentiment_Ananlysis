@@ -4,13 +4,13 @@ from keras.models import load_model
 
 class SentimentAnalyzer:
     def __init__(self):
-        self.model = load_model(os.path.join('model','rnn_model.h5'))
+        self.model = load_model(os.path.join('rnn_model.h5'))
         self.get_dictionaries_ready()
 
     def get_dictionaries_ready(self):
         self.word2id = {}
         self.id2word = {}
-        with open(os.path.join('data','word2id.txt'),'r') as f:
+        with open(os.path.join('word2id.txt'),'r') as f:
             text = f.readlines()
         for line in text:
             word, _id = line.split()
